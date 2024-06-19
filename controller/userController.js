@@ -131,7 +131,7 @@ export const getUserDetails = catchAsyncError(async (req, res, next) => {
 export const logoutAdmin = catchAsyncError(async (req, res, next) => {
   res
     .status(201)
-    .clearCookie("adminToken", "", {
+    .cookie("adminToken", "", {
       httpOnly: true,
       expires: new Date(Date.now()),
       secure:true,
@@ -146,7 +146,7 @@ export const logoutAdmin = catchAsyncError(async (req, res, next) => {
 export const logoutPatient = catchAsyncError(async (req, res, next) => {
   res
     .status(201)
-    .clearCookie("patientToken", "", {
+    .cookie("patientToken", "", {
       httpOnly: true,
       expires: new Date(Date.now()),
       secure:true,
